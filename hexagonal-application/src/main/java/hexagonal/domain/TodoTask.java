@@ -1,16 +1,18 @@
 package hexagonal.domain;
 
+import java.sql.Timestamp;
+
 public class TodoTask {
 
     private Long id = null;
     private String body = null;
-    private long created = 0L;
-    private long updated = 0L;
+    private Timestamp created = null;
+    private Timestamp updated = null;
 
     public TodoTask() {
     }
 
-    public TodoTask(Long id, String body, long created, long updated) {
+    public TodoTask(Long id, String body, Timestamp created, Timestamp updated) {
         this.id = id;
         this.body = body;
         this.created = created;
@@ -33,19 +35,19 @@ public class TodoTask {
         this.body = body;
     }
 
-    public long getCreated() {
+    public Timestamp getCreated() {
         return created;
     }
 
-    public void setCreated(long created) {
+    public void setCreated(Timestamp created) {
         this.created = created;
     }
 
-    public long getUpdated() {
+    public Timestamp getUpdated() {
         return updated;
     }
 
-    public void setUpdated(long updated) {
+    public void setUpdated(Timestamp updated) {
         this.updated = updated;
     }
 }

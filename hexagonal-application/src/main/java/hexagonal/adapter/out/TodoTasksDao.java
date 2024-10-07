@@ -8,9 +8,6 @@ public interface TodoTasksDao {
 
     void dsl();
 
-    /**
-     * @return an incomplete TodoTask, doesn't include the body.
-     */
     TodoTask insert(String body);
 
     void delete(Long id);

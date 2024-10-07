@@ -50,6 +50,7 @@ public class TodoTasksService implements CreateTodoTaskUseCase,
 
         var inserted = dao.insert(body);
         task.setId(inserted.getId());
+
         task.setCreated(inserted.getCreated());
         task.setUpdated(inserted.getUpdated());
     }

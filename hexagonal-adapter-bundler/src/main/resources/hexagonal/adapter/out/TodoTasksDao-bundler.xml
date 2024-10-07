@@ -11,7 +11,8 @@
     </dsl>
 
     <insert>
-        INSERT INTO todo_task (body) VALUES (${param});
+        INSERT INTO todo_task (body)
+        VALUES (${param});
     </insert>
 
     <delete>
