@@ -1,0 +1,35 @@
+
+## Create new todo task
+
+POST http://localhost:8080/todo
+Content-Type: application/json
+
+{
+  "body": "Hello, world!"
+}
+
+### Update todo task
+
+PUT http://localhost:8080/todo/
+Content-Type: application/json
+
+{
+  "id": 1,
+  "body": "Hello, buddy!"
+}
+
+### Get top 10 todo tasks
+
+GET http://localhost:8080/todo/
+
+### Get top 5 todo tasks
+
+GET http://localhost:8080/todo/?offset=5&limit=2
+
+### Get one particular todo task
+
+GET http://localhost:8080/todo/5
+
+### Delete todo task
+
+DELETE http://localhost:8080/todo/1

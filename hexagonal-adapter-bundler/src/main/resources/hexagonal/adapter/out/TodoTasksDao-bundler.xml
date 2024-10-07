@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bundler>
+
+    <dsl>
+        CREATE TABLE todo_task (
+        id BIGINT AUTO_INCREMENT PRIMARY KEY,
+        body VARCHAR(200) NOT NULL,
+        created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+        );
+    </dsl>
+
+    <insert>
+        INSERT INTO todo_task (body) VALUES (${param});
+    </insert>
+
+    <delete>
+        DELETE FROM todo_task WHERE id = ${param};
+    </delete>
+
+    <update>
+        UPDATE todo_task
+        SET body = ${param.body},
+        updated = CURRENT_TIMESTAMP
+        WHERE id = ${param.id};
+    </update>
+
+    <get>
+        SELECT * FROM todo_task WHERE id = ${param};
+    </get>
+
+    <list>
+        SELECT * FROM todo_task
+        ORDER BY updated DESC
+        LIMIT ${params[1]}
+        OFFSET ${params[0]};
+    </list>
+
+</bundler>

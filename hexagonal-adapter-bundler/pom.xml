@@ -11,6 +11,10 @@
     <version>0.1.0-SNAPSHOT</version>
   </parent>
 
+  <properties>
+    <exec.mainClass>hexagonal.App</exec.mainClass>
+  </properties>
+
   <artifactId>hexagonal-adapter-bundler</artifactId>
 
   <dependencies>
@@ -19,6 +23,21 @@
       <artifactId>hexagonal-application</artifactId>
       <version>${project.version}</version>
     </dependency>
+    <dependency>
+      <groupId>io.github.mschonaker</groupId>
+      <artifactId>bundler</artifactId>
+      <version>0.1.3-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>2.3.232</version>
+    </dependency>
+    <!--dependency>
+      <groupId>org.mariadb.jdbc</groupId>
+      <artifactId>mariadb-java-client</artifactId>
+      <version>LATEST</version>
+    </dependency-->
     <dependency>
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-server</artifactId>
